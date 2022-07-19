@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/employees")
 public class EmployeeController {
 
@@ -33,13 +34,13 @@ public class EmployeeController {
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Employee> getById(@PathVariable("id") Long id){
         Employee employee = employeeService.getById(id);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
-    @GetMapping("lookup")
+    @GetMapping("/lookup")
     public ResponseEntity<Employee> getByEmail(@RequestParam String email){
         Employee employee = employeeService.getByEmail(email);
         return new ResponseEntity<>(employee, HttpStatus.OK);

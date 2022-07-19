@@ -1,6 +1,7 @@
 package com.logan.springbootbackend.domain.employee.services;
 
 import com.logan.springbootbackend.domain.core.exceptions.ResourceCreationException;
+import com.logan.springbootbackend.domain.core.exceptions.ResourceNotFoundException;
 import com.logan.springbootbackend.domain.employee.models.Employee;
 import com.logan.springbootbackend.domain.employee.repos.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
